@@ -39,6 +39,7 @@ plot3 <- function() {
         plotit <- prepare_data()
         plotit$datetime <- as.POSIXlt (paste(plotit$Date, plotit$Time),  "%d/%m/%Y %H:%M:%S", tz = "EST")
         p1 <- plotit$datetime
+<<<<<<< HEAD
         p2 <- plotit$Sub_metering_1
         p3 <- plotit$Sub_metering_2
         p4 <- plotit$Sub_metering_3
@@ -57,5 +58,25 @@ plot3 <- function() {
                 if (i==2) {dev.off()}
         }
         return()
+=======
+        p2 <- plotit$Global_active_power
+        p3 <- plotit@
+#        for (i in 1:2)  {
+#                  gap <- plotit$Globalactive_power  #creates GAP
+#                  
+#                   
+#                 if (i==2) {png(filename="./plot3.png")}
+        
+        plot (p1, p2, type = "l", col = "Black")
+        par(new=T)
+        plot (p1, p3, type = "l", col = "Red")
+        plot (p1, p4, type = "l", col = "Blue")
+        par (new=F)
+               
+#                 plot (p1,p2, type = "l", xlab = "datetime", ylab= "Global Active Power (kilowatts)")
+#                 if (i==2) {dev.off()}
+#         }
+#        return(plotit)
+>>>>>>> dfbc28eb88a11a0b9be2b9bb64ecdd1cd99179db
 }
 
